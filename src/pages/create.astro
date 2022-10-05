@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { PrismaClient } from '@prisma/client'
+
+if (Astro.request.method === "POST") {
+    const prisma = new PrismaClient();
+    await prisma.user.create({ data: {}});
+    return Astro.redirect('/');
+}
+---
+
+<Layout title="Create new user">
+	<main>
+		<form method="post">
+            <input type="hidden" value="test" />
+            <button type="submit">Create</button>
+        </form>
+	</main>
+</Layout>
