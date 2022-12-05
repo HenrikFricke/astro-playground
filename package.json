@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^2.1.0",
+    "@astrojs/netlify": "^1.2.1",
     "@astrojs/tailwind": "^2.0.2",
     "@prisma/client": "^4.4.0",
     "astro": "^1.4.4",
