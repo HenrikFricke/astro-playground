@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '../generated/client/runtime/edge'
 
 const prisma = new PrismaClient();
 const users = await prisma.user.findMany();
