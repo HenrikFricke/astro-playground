@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { PrismaClient } from '../generated/client'
+import { PrismaClient } from '@prisma/client/edge'
 
 if (Astro.request.method === "POST") {
     const prisma = new PrismaClient();
