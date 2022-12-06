@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { PrismaClient } from '@prisma/client/edge'
+import { createPrismaClient } from '../utils/prismaClient';
 
 if (Astro.request.method === "POST") {
-    const prisma = new PrismaClient();
+    const prisma = createPrismaClient();
     await prisma.user.create({ data: {}});
     return Astro.redirect('/');
 }

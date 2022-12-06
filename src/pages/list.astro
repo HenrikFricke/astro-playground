@@ -1,9 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { createPrismaClient } from '../utils/prismaClient';
+
+const prisma = createPrismaClient();
+const users = await prisma.user.findMany();
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Hello World :)</h1>
+		<ul>
+			{users.map(user => <li>{user.id}</li>)}
+		</ul>
 	</main>
 </Layout>
